@@ -68,7 +68,7 @@ class RecentItemRow extends StatelessWidget {
                         recentObj["rate"],
                         style: TextStyle(color: TColor.primary, fontSize: 11, fontWeight: FontWeight.w700),
                       ),
-                      SizedBox(height: 5),
+                      SizedBox(width: 5),
                       Text(
                         "(${recentObj["rating"]} Rating)",
                         style: TextStyle(color: TColor.secondPrimary, fontSize: 11, fontWeight: FontWeight.w700),
