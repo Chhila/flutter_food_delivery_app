@@ -3,6 +3,7 @@ import 'package:food_delivery_app/common/color_extension.dart';
 import 'package:food_delivery_app/common_widget/tab_button.dart';
 import 'package:food_delivery_app/view/home/home_view.dart';
 import 'package:food_delivery_app/view/menu/menu_view.dart';
+import 'package:food_delivery_app/view/offer/offer_view.dart';
 
 class MainTabView extends StatefulWidget {
   const MainTabView({super.key});
@@ -72,7 +73,7 @@ class _MainTabViewState extends State<MainTabView> {
               onTap: () {
                 if (selectedTab != 1) {
                   selectedTab = 1;
-                  selectPageView = HomeView();
+                  selectPageView = OfferView();
                 } else {}
                 if (mounted) {
                   setState(() {});

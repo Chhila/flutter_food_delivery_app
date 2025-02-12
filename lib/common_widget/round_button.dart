@@ -7,7 +7,8 @@ class RoundButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final ButtonType type;
-  const RoundButton({super.key, required this.text, required this.onPressed, this.type = ButtonType.bgPrimary});
+  final double fontSize;
+  const RoundButton({super.key, required this.text, required this.onPressed, this.type = ButtonType.bgPrimary, this.fontSize = 16});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class RoundButton extends StatelessWidget {
           text,
           style: TextStyle(
             color: type == ButtonType.bgPrimary ? Colors.white : TColor.primary,
-            fontSize: 18,
+            fontSize: fontSize,
             fontWeight: FontWeight.w600,
           ),
         ),

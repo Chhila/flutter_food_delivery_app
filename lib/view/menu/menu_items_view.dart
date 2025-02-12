@@ -54,7 +54,7 @@ class _MenuItemsViewState extends State<MenuItemsView> {
                   child: Row(
                     children: [
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {Navigator.pop(context);},
                         icon: Image.asset(
                           "assets/images/btn_back.png",
                           width: 20,

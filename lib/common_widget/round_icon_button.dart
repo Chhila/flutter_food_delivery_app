@@ -41,7 +41,7 @@ class _RoundIconButtonState extends State<RoundIconButton> {
               widget.text,
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 16,
+                fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
             ),
