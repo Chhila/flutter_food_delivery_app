@@ -5,7 +5,8 @@ class RoundIconButton extends StatefulWidget {
   final String text;
   final String iconPath;
   final Color? color;
-  const RoundIconButton({super.key, required this.onPressed, required this.text, required this.iconPath, required this.color});
+  final double fontSize;
+  const RoundIconButton({super.key, required this.onPressed, required this.text, required this.iconPath, required this.color, this.fontSize = 12});
 
   @override
   State<RoundIconButton> createState() => _RoundIconButtonState();
@@ -41,7 +42,7 @@ class _RoundIconButtonState extends State<RoundIconButton> {
               widget.text,
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 12,
+                fontSize: widget.fontSize,
                 fontWeight: FontWeight.w600,
               ),
             ),

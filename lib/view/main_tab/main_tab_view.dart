@@ -4,6 +4,9 @@ import 'package:food_delivery_app/common_widget/tab_button.dart';
 import 'package:food_delivery_app/view/home/home_view.dart';
 import 'package:food_delivery_app/view/menu/menu_view.dart';
 import 'package:food_delivery_app/view/offer/offer_view.dart';
+import 'package:food_delivery_app/view/profile/profile_view.dart';
+
+import '../more/more_view.dart';
 
 class MainTabView extends StatefulWidget {
   const MainTabView({super.key});
@@ -88,7 +91,7 @@ class _MainTabViewState extends State<MainTabView> {
               onTap: () {
                 if (selectedTab != 3) {
                   selectedTab = 3;
-                  selectPageView = HomeView();
+                  selectPageView = ProfileView();
                 } else {}
                 if (mounted) {
                   setState(() {});
@@ -102,7 +105,7 @@ class _MainTabViewState extends State<MainTabView> {
               onTap: () {
                 if (selectedTab != 4) {
                   selectedTab = 4;
-                  selectPageView = HomeView();
+                  selectPageView = MoreView();
                 } else {}
                 if (mounted) {
                   setState(() {});
