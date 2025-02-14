@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/common_widget/round_button.dart';
 import 'package:food_delivery_app/common_widget/round_icon_button.dart';
+import 'package:food_delivery_app/view/more/add_card_view.dart';
 
 import '../../common/color_extension.dart';
 
@@ -178,7 +179,21 @@ class _MenuItemsViewState extends State<PaymentDetailsView> {
                 SizedBox(height: 20),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: RoundIconButton(onPressed: () {}, text: "Add Another Credit/Debit", iconPath: "assets/images/add.png", fontSize: 16, color: TColor.primary),
+                  child: RoundIconButton(
+                      onPressed: () {
+                        showModalBottomSheet(
+                            isScrollControlled: true,
+                            backgroundColor: Colors.transparent,
+                            context: context,
+                            builder: (context) {
+                              return AddCardView();
+                            });
+                        // Navigator.push(context, MaterialPageRoute(builder: (context) => AddCardView()));
+                      },
+                      text: "Add Another Credit/Debit",
+                      iconPath: "assets/images/add.png",
+                      fontSize: 16,
+                      color: TColor.primary),
                 )
               ],
             ),

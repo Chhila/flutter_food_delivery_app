@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/view/more/about_us_view.dart';
+import 'package:food_delivery_app/view/more/inbox_view.dart';
+import 'package:food_delivery_app/view/more/notification_view.dart';
 import 'package:food_delivery_app/view/more/payment_details_view.dart';
 
 import '../../common/color_extension.dart';
@@ -89,10 +92,22 @@ class _MoreViewState extends State<MoreView> {
                     var moreObj = moreArr[index] as Map ?? {};
                     var countBase = moreObj['base'] as int? ?? 0;
                     return InkWell(
+                      splashColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
                       onTap: () {
                         switch (moreObj["index"].toString()) {
                           case "1":
                             Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentDetailsView()));
+                            break;
+                          case "3":
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationView()));
+                            break;
+                          case "4":
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => InboxView()));
+                            break;
+                          case "5":
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => AboutUsView()));
+                            break;
                         }
                       },
                       child: Container(
