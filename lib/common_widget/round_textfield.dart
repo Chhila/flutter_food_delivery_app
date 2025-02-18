@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/common/color_extension.dart';
 
 class RoundTextfield extends StatelessWidget {
-  final TextEditingController controller = TextEditingController();
+  final TextEditingController? controller;
   final String hintText;
   final TextInputType? keyboardType;
   final bool? isPassword;
   final Color? bgColor;
   final Widget? left;
-  RoundTextfield({
+  const RoundTextfield({
     super.key,
-    required TextEditingController controller,
+    this.controller,
     required this.hintText,
     this.isPassword,
     this.keyboardType,

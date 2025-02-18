@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../common/color_extension.dart';
+import 'my_order_view.dart';
 
 class AboutUsView extends StatefulWidget {
   const AboutUsView({super.key});
@@ -59,7 +60,9 @@ class _MenuItemsViewState extends State<AboutUsView> {
                       ),
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => MyOrderView()));
+                      },
                       icon: Image.asset(
                         "assets/images/shopping_cart.png",
                         width: 25,

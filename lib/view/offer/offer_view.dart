@@ -3,6 +3,8 @@ import 'package:food_delivery_app/common/color_extension.dart';
 import 'package:food_delivery_app/common_widget/popular_restaurant_row.dart';
 import 'package:food_delivery_app/common_widget/round_button.dart';
 
+import '../more/my_order_view.dart';
+
 class OfferView extends StatefulWidget {
   const OfferView({super.key});
 
@@ -48,7 +50,9 @@ class _HomeViewState extends State<OfferView> {
                         ),
                       ),
                       IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => MyOrderView()));
+                          },
                           icon: Image.asset(
                             "assets/images/shopping_cart.png",
                             width: 25,

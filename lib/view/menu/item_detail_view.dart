@@ -5,6 +5,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:food_delivery_app/common_widget/round_icon_button.dart';
 
 import '../../common/color_extension.dart';
+import '../more/my_order_view.dart';
 
 class ItemDetailView extends StatefulWidget {
   const ItemDetailView({super.key});
@@ -369,22 +370,27 @@ class _ItemDetailViewState extends State<ItemDetailView> {
                                           ],
                                         ),
                                       ),
-                                      Container(
-                                        width: 45,
-                                        height: 45,
-                                        decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.circular(22.5),
-                                          boxShadow: [
-                                            BoxShadow(color: Colors.black12, blurRadius: 12, offset: Offset(0, 4)),
-                                          ],
-                                        ),
-                                        alignment: Alignment.center,
-                                        child: Image.asset(
-                                          "assets/images/shopping_cart.png",
-                                          width: 20,
-                                          height: 20,
-                                          color: TColor.primary,
+                                      InkWell(
+                                        onTap: () {
+                                          Navigator.push(context, MaterialPageRoute(builder: (context) => MyOrderView()));
+                                        },
+                                        child: Container(
+                                          width: 45,
+                                          height: 45,
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.circular(22.5),
+                                            boxShadow: [
+                                              BoxShadow(color: Colors.black12, blurRadius: 12, offset: Offset(0, 4)),
+                                            ],
+                                          ),
+                                          alignment: Alignment.center,
+                                          child: Image.asset(
+                                            "assets/images/shopping_cart.png",
+                                            width: 20,
+                                            height: 20,
+                                            color: TColor.primary,
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -406,7 +412,6 @@ class _ItemDetailViewState extends State<ItemDetailView> {
                       onTap: () {
                         setState(() {
                           isFav = !isFav;
-                          log(isFav.toString());
                         });
                       },
                       child: Image.asset(
@@ -442,7 +447,9 @@ class _ItemDetailViewState extends State<ItemDetailView> {
                         ),
                       ),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => MyOrderView()));
+                        },
                         icon: Image.asset(
                           "assets/images/shopping_cart.png",
                           width: 25,

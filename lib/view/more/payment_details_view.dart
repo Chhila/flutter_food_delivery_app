@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/common_widget/round_button.dart';
 import 'package:food_delivery_app/common_widget/round_icon_button.dart';
 import 'package:food_delivery_app/view/more/add_card_view.dart';
+import 'package:food_delivery_app/view/more/my_order_view.dart';
 
 import '../../common/color_extension.dart';
 
@@ -59,7 +60,9 @@ class _MenuItemsViewState extends State<PaymentDetailsView> {
                       ),
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => MyOrderView()));
+                      },
                       icon: Image.asset(
                         "assets/images/shopping_cart.png",
                         width: 25,

@@ -3,6 +3,7 @@ import 'package:food_delivery_app/view/menu/menu_items_view.dart';
 
 import '../../common/color_extension.dart';
 import '../../common_widget/round_textfield.dart';
+import '../more/my_order_view.dart';
 
 class MenuView extends StatefulWidget {
   const MenuView({super.key});
@@ -57,7 +58,9 @@ class _MenuViewState extends State<MenuView> {
                           ),
                         ),
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => MyOrderView()));
+                            },
                             icon: Image.asset(
                               "assets/images/shopping_cart.png",
                               width: 25,

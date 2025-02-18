@@ -7,6 +7,8 @@ import 'package:food_delivery_app/common_widget/recent_item_row.dart';
 import 'package:food_delivery_app/common_widget/round_textfield.dart';
 import 'package:food_delivery_app/common_widget/view_all_title_row.dart';
 
+import '../more/my_order_view.dart';
+
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
@@ -65,7 +67,9 @@ class _HomeViewState extends State<HomeView> {
                         ),
                       ),
                       IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => MyOrderView()));
+                          },
                           icon: Image.asset(
                             "assets/images/shopping_cart.png",
                             width: 25,

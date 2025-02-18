@@ -4,6 +4,7 @@ import 'package:food_delivery_app/view/menu/item_detail_view.dart';
 
 import '../../common/color_extension.dart';
 import '../../common_widget/round_textfield.dart';
+import '../more/my_order_view.dart';
 
 class MenuItemsView extends StatefulWidget {
   final Map menuObj;
@@ -54,7 +55,9 @@ class _MenuItemsViewState extends State<MenuItemsView> {
                   child: Row(
                     children: [
                       IconButton(
-                        onPressed: () {Navigator.pop(context);},
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                         icon: Image.asset(
                           "assets/images/btn_back.png",
                           width: 20,
@@ -62,16 +65,20 @@ class _MenuItemsViewState extends State<MenuItemsView> {
                         ),
                       ),
                       SizedBox(width: 5),
-                      Text(
-                        widget.menuObj["name"],
-                        style: TextStyle(
-                          color: TColor.primaryText,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w800,
+                      Expanded(
+                        child: Text(
+                          widget.menuObj["name"],
+                          style: TextStyle(
+                            color: TColor.primaryText,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w800,
+                          ),
                         ),
                       ),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => MyOrderView()));
+                        },
                         icon: Image.asset(
                           "assets/images/shopping_cart.png",
                           width: 25,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/view/more/about_us_view.dart';
 import 'package:food_delivery_app/view/more/inbox_view.dart';
+import 'package:food_delivery_app/view/more/my_order_view.dart';
 import 'package:food_delivery_app/view/more/notification_view.dart';
 import 'package:food_delivery_app/view/more/payment_details_view.dart';
 
@@ -73,7 +74,9 @@ class _MoreViewState extends State<MoreView> {
                         ),
                       ),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => MyOrderView()));
+                        },
                         icon: Image.asset(
                           "assets/images/shopping_cart.png",
                           width: 25,
@@ -98,6 +101,9 @@ class _MoreViewState extends State<MoreView> {
                         switch (moreObj["index"].toString()) {
                           case "1":
                             Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentDetailsView()));
+                            break;
+                          case "2":
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => MyOrderView()));
                             break;
                           case "3":
                             Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationView()));
